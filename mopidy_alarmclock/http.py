@@ -82,7 +82,7 @@ class SetAlarmRequestHandler(BaseRequestHandler):
         time = parse_time(self.get_argument('time', None))
         random_mode = bool(self.get_argument('random', False))
 
-        wk_light = bool(self.get_argument('wk_light', False))
+        wk_light_mode = bool(self.get_argument('wk_light', False))
 
         # Get and sanitize volume and seconds to full volume
         volume = int(self.get_argument('volume', 100))
