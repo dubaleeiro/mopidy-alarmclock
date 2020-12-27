@@ -82,6 +82,8 @@ class SetAlarmRequestHandler(BaseRequestHandler):
         time = parse_time(self.get_argument('time', None))
         random_mode = bool(self.get_argument('random', False))
 
+        wk_light = bool(self.get_argument('wk_light', False))
+
         # Get and sanitize volume and seconds to full volume
         volume = int(self.get_argument('volume', 100))
         volume = max(min(volume, 100), 1)
@@ -95,6 +97,7 @@ class SetAlarmRequestHandler(BaseRequestHandler):
             alarm.random_mode = random_mode
             alarm.volume = volume
             alarm.volume_increase_seconds = volume_increase_seconds
+            alarm.wk_light = wk_light
             alarm.enabled = enabled
             self.alarm_manager.save_alarms()
             self.send_message('ok')
