@@ -85,10 +85,10 @@
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="checkboxes">Wake Up Light</label>
+              <label class="col-md-4 control-label" for="checkboxes-{{ i }}-0">Wake Up Light</label>
               <div class="col-md-4">
-                <label class="checkbox-inline" for="checkboxes-1">
-                  <input name="wk_light" id="checkboxes-1" value="1" type="checkbox"{% if config['def_wk_light'] %} checked="checked"{% end %}>
+                <label class="checkbox-inline" for="checkboxes-{{ i }}-0">
+                  <input name="wk_light" id="checkboxes-{{ i }}-0" value="1" type="checkbox"{% if alarm.wk_light %} checked="checked"{% end %}>
                 </label>
               </div>
             </div>
