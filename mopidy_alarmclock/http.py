@@ -7,7 +7,7 @@ import re
 import tornado.template
 import tornado.web
 
-from alarm_manager import parse_time
+from .alarm_manager import parse_time
 
 
 template_directory = os.path.join(os.path.dirname(__file__), 'templates')
