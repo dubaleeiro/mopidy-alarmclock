@@ -19,7 +19,7 @@ class Alarm(object):
     random_mode = None  # True if the playlist will be played in shuffle mode
     volume = None  # Alarm volume
     volume_increase_seconds = None  # Seconds to full volume
-    wk_light = None # True if NeoPixels is to be activated
+    wk_light_mode = None # True if NeoPixels is to be activated
     enabled = False
     days = None
 
@@ -66,7 +66,7 @@ class AlarmEncoder(json.JSONEncoder):
             ('random', o.random_mode),
             ('volume', o.volume),
             ('volume_increase_seconds', o.volume_increase_seconds),
-            ('wk_light', o.wk_light),
+            ('wk_light', o.wk_light_mode),
             ('days', o.days),
         ])
 
@@ -84,7 +84,7 @@ def alarm_decoder(o):
     a.random_mode = o.get('random', False)
     a.volume = o.get('volume', 100)
     a.volume_increase_seconds = o.get('volume_increase_seconds', 0)
-    a.wk_light = o.get('wk_light', False)
+    a.wk_light_mode = o.get('wk_light', False)
     a.days = o.get('days', a.days)
     return a
 
@@ -151,7 +151,7 @@ class AlarmManager(object):
         a.random_mode = config['def_random']
         a.volume = config['def_volume']
         a.volume_increase_seconds = config['def_vol_inc_duration']
-        a.wk_light = config['wk_light']
+        a.wk_light_mode = config['def_wk_light']
 
         self.alarms.append(a)
         self.save_alarms()
