@@ -176,7 +176,7 @@ class AlarmManager(object):
         try:
             playlist = self.core.playlists.lookup(alarm.playlist).get()
             self.core.tracklist.add(playlist.tracks)
-            if self.core.tracklist.length.get() < 1:
+            if self.core.tracklist.get_length().get() < 1:
                 raise Exception('Tracklist empty')
         except:
             # TODO: This should be optional
