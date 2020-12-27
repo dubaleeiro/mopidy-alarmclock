@@ -28,6 +28,7 @@ class Extension(ext.Extension):
         schema['def_random'] = config.Boolean()
         schema['def_volume'] = config.Integer()
         schema['def_vol_inc_duration'] = config.Integer()
+        schema['def_wk_light'] = config.Boolean()
         return schema
 
     def setup(self, registry):
