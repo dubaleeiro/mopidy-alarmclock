@@ -40,7 +40,7 @@ class MainRequestHandler(BaseRequestHandler):
             message = MESSAGES[self.msg_store.msg_code]
             self.msg_store.msg_code = None
 
-        playlists = self.core.playlists.playlists.get()
+        playlists = self.core.playlists.as_lists().get()
 
         self.write(template_loader.load('index.html').generate(
             playlists=playlists,
