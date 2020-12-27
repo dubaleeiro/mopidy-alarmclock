@@ -71,14 +71,16 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="volume-{{ i }}">Alarm volume</label>
               <div class="col-md-4">
-                <input type="range" id="volume-{{ i }}" name="volume" class="form-control volume" min="1" max="100" value="{{ alarm.volume }}" title="{{ alarm.volume }}" onchange="this.title=this.value; this.style.backgroundColor='rgb(255, '+Math.round(this.value*2.55)+', '+Math.round(this.value*2.55)+')';">
+                <input type="range" id="volume-{{ i }}" name="volume" class="form-control volume" min="1" max="100" value="{{ alarm.volume }}" title="{{ alarm.volume }}" onchange="this.title=this.value; this.style.backgroundColor='rgb(255, '+Math.round(this.value*2.55)+', '+Math.round(this.value*2.55)+')';" oninput="this.nextElementSibling.value = this.value">
+                  <output></output>  
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-md-4 control-label" for="incsec-{{ i }}">Seconds to full volume</label>
               <div class="col-md-4">
-                <input type="range" id="incsec-{{ i }}" name="incsec" class="form-control" min="0" max="300" value="{{ alarm.volume_increase_seconds }}" title="{{ alarm.volume_increase_seconds }}" onchange="this.title=this.value;">
+                <input type="range" id="incsec-{{ i }}" name="incsec" class="form-control" min="0" max="300" value="{{ alarm.volume_increase_seconds }}" title="{{ alarm.volume_increase_seconds }}" onchange="this.title=this.value;" oninput="this.nextElementSibling.value = this.value">
+                  <output></output>
               </div>
             </div>
 
